@@ -38,10 +38,10 @@ export const Form = () => {
       const votoris = (5+(((data.numerodirisultati-250)(10-5))/(3000-250)));
     }
     if(data.numerodirisultati <= 250 && data.numerodirisultati >= 0){
-      const votoris = (((data.numerodirisultati)(5))/(250));
+      const votoris = (((data.numerodirisultati)*(5))/(250));
     }
     if(data.numerodirisultati <= 5000 && data.numerodirisultati >= 3000){
-      const votoris = (((data.numerodirisultati)(5))/(5000-3000));
+      const votoris = (((data.numerodirisultati)*(5))/(5000-3000));
     }
     ///////
 
@@ -49,18 +49,18 @@ export const Form = () => {
       const votovolumidiri = 10;
     }
     if(data.volumidiricerca <= 3000 && data.volumidiricerca >=2000){
-      const votovolumidiri = 7*(((data.volumidiricerca)(10-7))/(3000-2000));
+      const votovolumidiri = 7*(((data.volumidiricerca)*(10-7))/(3000-2000));
     }
     if(data.volumidiricerca <= 2000 && data.volumidiricerca >=500){
-      const votovolumidiri = 4*(((data.volumidiricerca)(7-4))/(2000-500));
+      const votovolumidiri = 4*(((data.volumidiricerca)*(7-4))/(2000-500));
     }
         
     if(data.volumidiricerca < 500){
-      const votovolumidiri = (((data.volumidiricerca)(4))/(500));
+      const votovolumidiri = (((data.volumidiricerca)*(4))/(500));
     }
     
     if(data.mediabestseller){
-      const votobestsell = 7*(((data.mediabestseller)(10-7))/(3000-2000));
+      const votobestsell = 7*(((data.mediabestseller)*(10-7))/(3000-2000));
     }
     
     const numeromediodirec= normalize(data.numeromediodirecensioni);
@@ -71,6 +71,7 @@ export const Form = () => {
     
     console.log(data)
     setSuccess(true)
+    setResult(0)
   })
 
 
@@ -106,7 +107,7 @@ export const Form = () => {
           </button>
           <div className="mt-5">
           {success && (
-            <p className="font-semibold text-green-500 mb-5 flex items-center gap-1">
+            <p className="text-5xl font-semibold text-green-500 mb-5 flex items-center gap-1">
               <BsFillCheckSquareFill /> {result}
             </p>
           )}
