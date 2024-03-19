@@ -7,10 +7,15 @@
 *-------------------------------------------------------------------*/
 
 import cn from 'classnames'
+import React, { useState } from 'react';
+import Popover from '@mui/material/Popover';
+import Typography from '@mui/material/Typography';
 import { findInputError, isFormInvalid } from '../utils'
 import { useFormContext } from 'react-hook-form'
 import { AnimatePresence, motion } from 'framer-motion'
 import { MdError } from 'react-icons/md'
+import { QuestionMarkCircleIcon } from '@heroicons/react/20/solid'
+
 
 export const Input = ({
   name,
@@ -31,14 +36,49 @@ export const Input = ({
   const isInvalid = isFormInvalid(inputErrors)
 
   const input_tailwind =
-    'p-5 font-medium rounded-md w-full border border-slate-300 placeholder:opacity-60'
+    'p-3 font-medium rounded-md w-full border border-slate-300 placeholder:opacity-60'
+    const [anchorEl, setAnchorEl] = React.useState(null);
 
+    const handlePopoverOpen = (event) => {
+      setAnchorEl(event.currentTarget);
+    };
+  
+    const handlePopoverClose = () => {
+      setAnchorEl(null);
+    };
+  
+    const open = Boolean(anchorEl);
+  
   return (
     <div className={cn('flex flex-col w-full gap-2', className)}>
       <div className="flex justify-between">
         <label htmlFor={id} className="font-semibold capitalize">
           {label}
         </label>
+        <QuestionMarkCircleIcon className="h-5 w-5 text-gray-400" aria-hidden="true" aria-owns={open ? 'mouse-over-popover' : undefined}
+        aria-haspopup="true"
+        onMouseEnter={handlePopoverOpen}
+        onMouseLeave={handlePopoverClose}/>
+              <Popover
+        id="mouse-over-popover"
+        sx={{
+          pointerEvents: 'none',
+        }}
+        open={open}
+        anchorEl={anchorEl}
+        anchorOrigin={{
+          vertical: 'top',
+          horizontal: 'left',
+        }}
+        transformOrigin={{
+          vertical: 'bottom',
+          horizontal: 'left',
+        }}
+        onClose={handlePopoverClose}
+        disableRestoreFocus
+      >
+        <Typography sx={{ p: 1 }}>Informazioni sul dato. Lorem Ipsum dol ...</Typography>
+      </Popover>
         <AnimatePresence mode="wait" initial={false}>
           {isInvalid && (
             <InputError

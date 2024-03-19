@@ -6,66 +6,12 @@
 |  🐸 Returns:  -
 *-------------------------------------------------------------------*/
 
-export const name_validation = {
-  name: 'name',
-  label: 'name',
-  type: 'text',
-  id: 'name',
-  placeholder: 'write your name ...',
-  validation: {
-    required: {
-      value: true,
-      message: 'required',
-    },
-    maxLength: {
-      value: 30,
-      message: '30 characters max',
-    },
-  },
-}
-
-export const desc_validation = {
-  name: 'description',
-  label: 'description',
-  multiline: true,
-  id: 'description',
-  placeholder: 'write description ...',
-  validation: {
-    required: {
-      value: true,
-      message: 'required',
-    },
-    maxLength: {
-      value: 200,
-      message: '200 characters max',
-    },
-  },
-}
-
-export const password_validation = {
-  name: 'password',
-  label: 'password',
-  type: 'password',
-  id: 'password',
-  placeholder: 'type password ...',
-  validation: {
-    required: {
-      value: true,
-      message: 'required',
-    },
-    minLength: {
-      value: 6,
-      message: 'min 6 characters',
-    },
-  },
-}
-
-export const num_validation = {
-  name: 'num',
-  label: 'number',
+export const numerodirisultati = {
+  name: 'numerodirisultati',
+  label: 'Numero di Risultati',
   type: 'number',
-  id: 'num',
-  placeholder: 'write a random number',
+  id: 'num_result',
+  placeholder: '1-100',
   validation: {
     required: {
       value: true,
@@ -74,21 +20,98 @@ export const num_validation = {
   },
 }
 
-export const email_validation = {
-  name: 'email',
-  label: 'email address',
-  type: 'email',
-  id: 'email',
-  placeholder: 'write a random email address',
+export const volumidiricerca = {
+  name: 'volumidiricerca',
+  label: 'Volumi di Ricerca',
+  id: 'vol_rsch',
+  type: 'number',
+
+  placeholder: '1-1000',
   validation: {
     required: {
       value: true,
       message: 'required',
     },
-    pattern: {
-      value:
-        /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
-      message: 'not valid',
+  },
+}
+
+export const mediabestseller = {
+  name: 'mediabestseller',
+  label: 'Media Best Seller',
+  type: 'number',
+  id: 'num_result',
+  placeholder: '1-100',
+  validation: {
+    required: {
+      value: true,
+      message: 'required',
+    },
+  },
+}
+
+export const numeromediodirecensioni = {
+  name: 'numeromediodirecensioni',
+  label: 'Numero di Recensioni',
+  type: 'number',
+  id: 'num_rew',
+  placeholder: '1-100',
+  validation: {
+    required: {
+      value: true,
+      message: 'required',
+    },
+  },
+}
+
+export const prezzomedio = {
+  name: 'prezzomedio',
+  label: 'Prezzo Medio',
+  type: 'number',
+  id: 'price',
+  placeholder: '1-100',
+  validation: {
+    required: {
+      value: true,
+      message: 'required',
+    },
+  },
+}
+export const presenzakeyword = {
+  name: 'presenzakeyword',
+  label: 'Presenza Keyword nel titolo',
+  type: 'number',
+  id: 'num_result',
+  placeholder: '1-100',
+  validation: {
+    required: {
+      value: true,
+      message: 'required',
+    },
+  },
+}
+export const numerodiautoriindipendenti = {
+  name: 'numerodiautoriindipendenti',
+  label: 'Numero di Autori Indipendenti',
+  type: 'number',
+  id: 'num_auth',
+  placeholder: '1-100',
+  validation: {
+    required: {
+      value: true,
+      message: 'required',
+    },
+  },
+}
+export const numerodipubblicazioni = {
+  name: 'numerodipubblicazioni',
+  label: 'Numero di Pubblicazioni recenti',
+  type: 'number',
+  id: 'num_public',
+  placeholder: '1-100',
+  validation: {
+    required: {
+      value: true,
+      message: 'required',
     },
   },
 }
