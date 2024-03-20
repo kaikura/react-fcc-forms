@@ -171,7 +171,7 @@ export const Form = () => {
 
 
   return (
-    <div className='bg-violet-500 w-full h-screen	'>
+    <div className='bg-violet-500'>
     <FormProvider {...methods}>
       <form
         onSubmit={e => e.preventDefault()}
