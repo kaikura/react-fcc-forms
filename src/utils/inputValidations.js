@@ -78,7 +78,7 @@ export const prezzomedio = {
 }
 export const presenzakeyword = {
   name: 'presenzakeyword',
-  label: 'Presenza Keyword nel titolo',
+  label: 'Keyword nel titolo',
   type: 'number',
   id: 'num_result',
   placeholder: '1-100',
@@ -91,7 +91,7 @@ export const presenzakeyword = {
 }
 export const numerodiautoriindipendenti = {
   name: 'numerodiautoriindipendenti',
-  label: 'Numero di Autori Indipendenti',
+  label: 'Autori Indipendenti',
   type: 'number',
   id: 'num_auth',
   placeholder: '1-50',
