@@ -179,7 +179,7 @@ export const Form = () => {
         autoComplete="off"
         className="container"
       >
-        <div className="py-16 grid gap-5 md:grid-cols-2">
+        <div className="py-16 grid gap-5 md:grid-cols-2 sm:grid-cols-1">
           <Input {...numerodirisultati} />
           <Input {...volumidiricerca} />
           <Input {...mediabestseller} />
@@ -188,7 +188,7 @@ export const Form = () => {
           <Input {...numerodiautoriindipendenti} />
           <Input {...numerodipubblicazioni} />
           <Input {...presenzakeyword} />
-          <div className='grid-cols-1 grid-rows-3 grid col-span-2 items-center justify-center'>
+          <div className='grid-cols-1 grid-rows-3 grid col-span-1 lg:col-span-2 items-center justify-center'>
           <button
             onClick={onSubmit}
             className="p-5 rounded-md bg-yellow-400 font-semibold text-white items-center hover:bg-yellow-500"

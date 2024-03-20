@@ -53,7 +53,7 @@ export const Input = ({
   return (
     <div className={cn('flex flex-col w-full gap-2', className)}>
       <div className="flex justify-between">
-        <label htmlFor={id} className=" capitalize text-white	">
+        <label htmlFor={id} className=" capitalize text-white text-sm	">
           {label}
         </label>
         <QuestionMarkCircleIcon className="h-5 w-5 text-gray-400" aria-hidden="true" aria-owns={open ? 'mouse-over-popover' : undefined}

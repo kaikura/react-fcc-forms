@@ -18,7 +18,7 @@ export const Navigation = () => {
               <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
                 <div className="flex flex-shrink-0 items-center">
                   <img
-                    className="h-20 lg:h-24 w-auto p-2 lg:p-0"
+                    className="h-16 lg:h-24 w-auto lg:px-12 "
                     src="/favicon.png"
                     alt="LSP Solutions"
                   />
