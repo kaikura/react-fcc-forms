@@ -171,6 +171,7 @@ export const Form = () => {
 
 
   return (
+    <div className='bg-violet-500 w-full h-screen	'>
     <FormProvider {...methods}>
       <form
         onSubmit={e => e.preventDefault()}
@@ -196,10 +197,10 @@ export const Form = () => {
           </button>
           {success && (
             <>
-            <p className="text-6xl font-semibold justify-self-center mt-4">
+            <p className="text-6xl text-white font-semibold justify-self-center mt-4">
                {result}
             </p>
-            <p className='text-3xl font-semibold justify-self-center'>{comment}</p>
+            <p className='text-3xl text-white font-semibold justify-self-center'>{comment}</p>
             </>
           )}
 
@@ -208,5 +209,6 @@ export const Form = () => {
 
       </form>
     </FormProvider>
+    </div>
   )
 }

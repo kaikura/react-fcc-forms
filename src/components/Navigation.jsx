@@ -18,8 +18,8 @@ export const Navigation = () => {
               <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
                 <div className="flex flex-shrink-0 items-center">
                   <img
-                    className="h-24 w-auto p-4"
-                    src="/Logo_Masterclass_-1-_Original.png"
+                    className="h-20 lg:h-24 w-auto p-0"
+                    src="/favicon.png"
                     alt="LSP Solutions"
                   />
                   
@@ -27,7 +27,7 @@ export const Navigation = () => {
                 
 
               </div>
-              <blockquote className="text-3xl p-6 font-semibold italic text-center text-slate-900">
+              <blockquote className="text-xl lg:text-3xl lg:p-10 p-8 font-semibold italic text-center text-slate-900">
                 Keyword .
                 <span className="before:block before:absolute before:-inset-2 before:-skew-y-2 before:bg-yellow-400 relative inline-block">
                     <span className="relative text-white">Helper</span>
