@@ -29,7 +29,7 @@ export const Navigation = () => {
               </div>
               <blockquote className="text-3xl p-6 font-semibold italic text-center text-slate-900">
                 Keyword .
-                <span className="before:block before:absolute before:-inset-2 before:-skew-y-2 before:bg-blue-500 relative inline-block">
+                <span className="before:block before:absolute before:-inset-2 before:-skew-y-2 before:bg-yellow-400 relative inline-block">
                     <span className="relative text-white">Helper</span>
                 </span>
                 </blockquote>

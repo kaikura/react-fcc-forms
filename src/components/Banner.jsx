@@ -33,7 +33,7 @@ export const Banner = () => {
           <svg viewBox="0 0 2 2" className="mx-2 inline h-0.5 w-0.5 fill-current" aria-hidden="true">
             <circle cx={1} cy={1} r={1} />
           </svg>
-          Lorem ipsum lorem ipsum lorem ipsum
+          Lorem ipsum 
         </p>
         <a
           href="#"

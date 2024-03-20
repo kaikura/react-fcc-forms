@@ -77,7 +77,7 @@ export const Input = ({
         onClose={handlePopoverClose}
         disableRestoreFocus
       >
-        <Typography sx={{ p: 1 }}>Informazioni sul dato. Lorem Ipsum dol ...</Typography>
+        <Typography sx={{ p: 1 }}>Informazioni sul dato.</Typography>
       </Popover>
         <AnimatePresence mode="wait" initial={false}>
           {isInvalid && (

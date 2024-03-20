@@ -11,7 +11,7 @@ export const numerodirisultati = {
   label: 'Numero di Risultati',
   type: 'number',
   id: 'num_result',
-  placeholder: '1-100',
+  placeholder: '250-5.000',
   validation: {
     required: {
       value: true,
@@ -26,7 +26,7 @@ export const volumidiricerca = {
   id: 'vol_rsch',
   type: 'number',
 
-  placeholder: '1-1000',
+  placeholder: '500-3.000',
   validation: {
     required: {
       value: true,
@@ -40,7 +40,7 @@ export const mediabestseller = {
   label: 'Media Best Seller',
   type: 'number',
   id: 'num_result',
-  placeholder: '1-100',
+  placeholder: '50.000 - 250.000',
   validation: {
     required: {
       value: true,
@@ -54,7 +54,7 @@ export const numeromediodirecensioni = {
   label: 'Numero di Recensioni',
   type: 'number',
   id: 'num_rew',
-  placeholder: '1-100',
+  placeholder: '0-500',
   validation: {
     required: {
       value: true,
@@ -68,7 +68,7 @@ export const prezzomedio = {
   label: 'Prezzo Medio',
   type: 'number',
   id: 'price',
-  placeholder: '1-100',
+  placeholder: '1-20',
   validation: {
     required: {
       value: true,
@@ -94,7 +94,7 @@ export const numerodiautoriindipendenti = {
   label: 'Numero di Autori Indipendenti',
   type: 'number',
   id: 'num_auth',
-  placeholder: '1-100',
+  placeholder: '1-50',
   validation: {
     required: {
       value: true,
@@ -104,10 +104,10 @@ export const numerodiautoriindipendenti = {
 }
 export const numerodipubblicazioni = {
   name: 'numerodipubblicazioni',
-  label: 'Numero di Pubblicazioni recenti',
+  label: 'Pubblicazioni recenti',
   type: 'number',
   id: 'num_public',
-  placeholder: '1-100',
+  placeholder: '1-50',
   validation: {
     required: {
       value: true,

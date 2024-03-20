@@ -29,58 +29,146 @@ export const Form = () => {
   const [success, setSuccess] = useState(false)
 
   const[result, setResult] = useState(0);
+  const [comment,setComment] = useState("")
 
   const onSubmit = methods.handleSubmit(data => {
+
+    var votoris = 0;
+    var votovolumidiri = 0;
+    var votobestsell = 0;
+    var votorec= 0;
+    var votoprice= 0;
+    var votonumaut= 0;
+    var numerodipub= 0;
+    var votok= 0;
+
+
     if(data.numerodirisultati > 5000){
-      const votoris = 0;
+       votoris = 0;
     }
-    if(data.numerodirisultati >250 && data.numerodirisultati < 3000){
-      const votoris = (5+(((data.numerodirisultati-250)(10-5))/(3000-250)));
+    if(data.numerodirisultati == 0){
+      votoris = 0;
+   }
+    if(data.numerodirisultati >250 && data.numerodirisultati <= 3000){
+       votoris = parseInt(Math.round(5+(((data.numerodirisultati-250)*(10-5))/(3000-250))));
     }
-    if(data.numerodirisultati <= 250 && data.numerodirisultati >= 0){
-      const votoris = (((data.numerodirisultati)*(5))/(250));
+    if(data.numerodirisultati <= 250 && data.numerodirisultati > 0){
+       votoris = parseInt(Math.round(1+(((data.numerodirisultati)*(4-1))/(250))));
     }
-    if(data.numerodirisultati <= 5000 && data.numerodirisultati >= 3000){
-      const votoris = (((data.numerodirisultati)*(5))/(5000-3000));
+    if(data.numerodirisultati <= 5000 && data.numerodirisultati > 3000){
+       votoris = parseInt(Math.round(9+(((data.numerodirisultati-3000)*(2-9))/(5000-3000))));
     }
     ///////
 
     if(data.volumidiricerca > 3000){
-      const votovolumidiri = 10;
+       votovolumidiri = 10;
     }
     if(data.volumidiricerca <= 3000 && data.volumidiricerca >=2000){
-      const votovolumidiri = 7*(((data.volumidiricerca)*(10-7))/(3000-2000));
+       votovolumidiri = parseInt(Math.round(7+(((data.volumidiricerca-2000)*(10-7))/(3000-2000))));
     }
     if(data.volumidiricerca <= 2000 && data.volumidiricerca >=500){
-      const votovolumidiri = 4*(((data.volumidiricerca)*(7-4))/(2000-500));
+       votovolumidiri = parseInt(Math.round(4+(((data.volumidiricerca-500)*(7-5))/(2000-500))));
     }
         
     if(data.volumidiricerca < 500){
-      const votovolumidiri = (((data.volumidiricerca)*(4))/(500));
+       votovolumidiri = parseInt(Math.round(((data.volumidiricerca)*(4))/(500)));
     }
-    
-    if(data.mediabestseller){
-      const votobestsell = 7*(((data.mediabestseller)*(10-7))/(3000-2000));
+    ///////
+    if(data.mediabestseller < 50000){
+       votobestsell = 10;
     }
-    
-    const numeromediodirec= normalize(data.numeromediodirecensioni);
-    const prezzomed= normalize(data.prezzomedio);
-    const numerodiautoriindipenden= normalize(data.numerodiautoriindipendenti);
-    const numerodipub= normalize(data.numerodipubblicazioni);
-    const presenzakeyw= normalize(data.presenzakeyword);    
-    
+    if(data.mediabestseller >= 50000 && data.mediabestseller <=100000) {
+       votobestsell = parseInt(Math.round(10+(((data.mediabestseller-50000)*(5-10))/(100000-50000))));
+    }
+    if(data.mediabestseller > 100000 && data.mediabestseller <=250000) {
+       votobestsell = parseInt(Math.round(5+((data.mediabestseller-100000)*(1-5))/(250000-100000)));
+    }
+    if(data.mediabestseller > 250000) {
+       votobestsell = 0;
+    }
+    ///////
+    if(data.numeromediodirecensioni >= 0 && data.numeromediodirecensioni <=200) {
+       votorec= parseInt(Math.round(2+(((data.numeromediodirecensioni)*(10-2))/(200))));
+    }
+    if(data.numeromediodirecensioni >= 200 && data.numeromediodirecensioni <=400) {
+       votorec= parseInt(Math.round(10+((data.numeromediodirecensioni-200)*(2-10))/(400-200)));
+    }
+    if(data.numeromediodirecensioni > 400) {
+       votorec= 0;
+    }
+    ////////
+    if(data.prezzomedio <6) {
+       votoprice= 0;
+    }
+    if(data.prezzomedio >10) {
+       votoprice= 10;
+    }
+    if(data.prezzomedio >= 6 && data.prezzomedio <8) {
+       votoprice= parseInt(Math.round(1+(((data.prezzomedio-6)*(5-1))/(8-6))));
+    }
+    if(data.prezzomedio >= 8 && data.prezzomedio <=10) {
+       votoprice= parseInt(Math.round(5+(((data.prezzomedio-8)*(9-5))/(10-8))));
+    }
+    //////////
+    if(data.numerodiautoriindipendenti >= 5 && data.numerodiautoriindipendenti <=10) {
+       votonumaut= parseInt(Math.round(6+(((data.numerodiautoriindipendenti-5)*(9-6))/(10-5))));
+    }
+    if(data.numerodiautoriindipendenti >= 2 && data.numerodiautoriindipendenti <5) {
+       votonumaut= parseInt(Math.round(1+(((data.numerodiautoriindipendenti-2)*(6-1))/(5-2))));
+    }
+    if(data.numerodiautoriindipendenti >10) {
+       votonumaut= 10;
+    }
+    if(data.numerodiautoriindipendenti <2) {
+       votonumaut= 0;
+    }
+    ///////////
+    if(data.numerodipubblicazioni >= 10 && data.numerodipubblicazioni <=15) {
+       numerodipub= parseInt(Math.round(6+(((data.numerodipubblicazioni-10)*(9-6))/(15-10))));
+    }
+    if(data.numerodipubblicazioni >= 2 && data.numerodipubblicazioni <10) {
+       numerodipub= parseInt(Math.round(1+(((data.numerodipubblicazioni-2)*(6-1))/(10-2))));
+    }
+    if(data.numerodipubblicazioni > 15) {
+       numerodipub= 10;
+    }
+    if(data.numerodipubblicazioni < 2) {
+       numerodipub= 0;
+    }
+
+    //////////
+    if(data.presenzakeyword >= 10 && data.presenzakeyword <=20) {
+       votok= parseInt(Math.round(5+(((data.presenzakeyword-10)*(9-5))/(20-10))));
+    }
+    if(data.presenzakeyword >= 5 && data.presenzakeyword <10) {
+       votok= parseInt(Math.round(1+(((data.presenzakeyword-5)*(5-1))/(10-5))));
+    }
+    if(data.presenzakeyword > 20) {
+       votok= 10;
+    }
+    if(data.presenzakeyword < 5) {
+       votok= 0;
+    }
+
+    /////////    
     console.log(data)
     setSuccess(true)
-    setResult(0)
+    var total = (votoris+votovolumidiri+votobestsell+votorec+votoprice+votonumaut+numerodipub+votok)
+    if(total>=0 && total <=20){
+      setComment("Scappa da qui!")
+    }
+    if(total>20 && total <=40){
+      setComment("Ci penserei bene prima di pubblicare qui...")
+    }
+    if(total>40 && total <=60){
+      setComment("Una buona keywork")
+    }
+    if(total>60 && total <=80){
+      setComment("Ottimo risultato, da pubblicare assolutamente!")
+    }
+    setResult(total)
   })
 
-
-  const normalize = (data) => {
-
-    const val = parseInt(data);
-    console.log(val);
-
-  }
 
   return (
     <FormProvider {...methods}>
@@ -99,17 +187,20 @@ export const Form = () => {
           <Input {...numerodiautoriindipendenti} />
           <Input {...numerodipubblicazioni} />
           <Input {...presenzakeyword} />
+          <div className='grid-cols-3 col-span-2 flex items-center justify-around'>
           <button
             onClick={onSubmit}
-            className="p-5 rounded-md bg-blue-600 font-semibold text-white items-center gap-1 hover:bg-blue-800"
+            className="p-5 rounded-md bg-yellow-400 font-semibold text-white items-center gap-1 hover:bg-yellow-500"
           >
             Calcola il punteggio
           </button>
-          <div className="mt-5">
           {success && (
-            <p className="text-5xl font-semibold text-green-500 mb-5 flex items-center gap-1">
-              <BsFillCheckSquareFill /> {result}
+            <>
+            <p className="text-6xl font-semibold flex items-center gap-1">
+               {result}
             </p>
+            <p className='text-xxl font-semibold flex items-center'>{comment}</p>
+            </>
           )}
 
         </div>
