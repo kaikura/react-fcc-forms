@@ -187,19 +187,19 @@ export const Form = () => {
           <Input {...numerodiautoriindipendenti} />
           <Input {...numerodipubblicazioni} />
           <Input {...presenzakeyword} />
-          <div className='grid-cols-3 col-span-2 flex items-center justify-around'>
+          <div className='grid-cols-1 grid-rows-3 grid col-span-2 items-center justify-center'>
           <button
             onClick={onSubmit}
-            className="p-5 rounded-md bg-yellow-400 font-semibold text-white items-center gap-1 hover:bg-yellow-500"
+            className="p-5 rounded-md bg-yellow-400 font-semibold text-white items-center hover:bg-yellow-500"
           >
             Calcola il punteggio
           </button>
           {success && (
             <>
-            <p className="text-6xl font-semibold flex items-center gap-1">
+            <p className="text-6xl font-semibold justify-self-center mt-4">
                {result}
             </p>
-            <p className='text-xxl font-semibold flex items-center'>{comment}</p>
+            <p className='text-3xl font-semibold justify-self-center'>{comment}</p>
             </>
           )}
 
