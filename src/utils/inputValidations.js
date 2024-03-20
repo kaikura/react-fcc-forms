@@ -11,6 +11,7 @@ export const numerodirisultati = {
   label: 'Numero di Risultati',
   type: 'number',
   id: 'num_result',
+  comment: 'Numero di Risultati : Numero di libri presenti in questa keyword',
   placeholder: '250-5.000',
   validation: {
     required: {
@@ -25,6 +26,7 @@ export const volumidiricerca = {
   label: 'Volumi di Ricerca',
   id: 'vol_rsch',
   type: 'number',
+  comment: 'Volume di Ricerca: Numero di ricerche stimate mensili',
 
   placeholder: '500-3.000',
   validation: {
@@ -40,6 +42,8 @@ export const mediabestseller = {
   label: 'Media Best Seller',
   type: 'number',
   id: 'num_result',
+  comment: 'Media best seller: Media best seller s rank dei libri in prima pagina',
+
   placeholder: '50.000 - 250.000',
   validation: {
     required: {
@@ -54,6 +58,8 @@ export const numeromediodirecensioni = {
   label: 'Numero di Recensioni',
   type: 'number',
   id: 'num_rew',
+  comment: 'Numero di recensioni: Media di tutte le recensioni dei libri in prima pagina',
+
   placeholder: '0-500',
   validation: {
     required: {
@@ -69,6 +75,8 @@ export const prezzomedio = {
   type: 'number',
   id: 'price',
   placeholder: '1-20',
+  comment: 'Prezzo medio: Prezzo medio dei libri in prima pagina  ',
+
   validation: {
     required: {
       value: true,
@@ -82,6 +90,8 @@ export const presenzakeyword = {
   type: 'number',
   id: 'num_result',
   placeholder: '1-100',
+  comment: 'Keyword nel titolo: Quanti libri in prima pagina hanno presente nel titolo o sottotitolo la keyword che stai cercando',
+
   validation: {
     required: {
       value: true,
@@ -95,6 +105,8 @@ export const numerodiautoriindipendenti = {
   type: 'number',
   id: 'num_auth',
   placeholder: '1-50',
+  comment: 'Autori indipendenti: Numero di libri di autori indipendenti in prima pagina',
+
   validation: {
     required: {
       value: true,
@@ -108,6 +120,8 @@ export const numerodipubblicazioni = {
   type: 'number',
   id: 'num_public',
   placeholder: '1-50',
+  comment: 'Pubblicazioni recenti: Numero di libri pubblicati entro massimo un anno in prima pagina',
+
   validation: {
     required: {
       value: true,

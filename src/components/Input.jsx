@@ -26,6 +26,7 @@ export const Input = ({
   validation,
   multiline,
   className,
+  comment
 }) => {
   const {
     register,
@@ -77,7 +78,7 @@ export const Input = ({
         onClose={handlePopoverClose}
         disableRestoreFocus
       >
-        <Typography sx={{ p: 1 }}>Informazioni sul dato.</Typography>
+        <Typography sx={{ p: 1 }}>{comment}</Typography>
       </Popover>
         <AnimatePresence mode="wait" initial={false}>
           {isInvalid && (
