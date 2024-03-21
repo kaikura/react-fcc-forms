@@ -42,7 +42,7 @@ export const mediabestseller = {
   label: 'Media Best Seller',
   type: 'number',
   id: 'num_result',
-  comment: 'Media best seller: Media best seller s rank dei libri in prima pagina',
+  comment: "Media best seller: Media best seller's rank dei libri in prima pagina",
 
   placeholder: '50.000 - 250.000',
   validation: {
