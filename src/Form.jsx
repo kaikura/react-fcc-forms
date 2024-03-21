@@ -43,20 +43,20 @@ export const Form = () => {
     var votok= 0;
 
 
-    if(data.numerodirisultati > 5000){
-       votoris = 0;
+    if(data.numerodirisultati > 15000){
+       votoris = -50;
     }
     if(data.numerodirisultati == 0){
-      votoris = 0;
+      votoris = -50;
    }
     if(data.numerodirisultati >250 && data.numerodirisultati <= 3000){
        votoris = parseInt(Math.round(5+(((data.numerodirisultati-250)*(10-5))/(3000-250))));
     }
     if(data.numerodirisultati <= 250 && data.numerodirisultati > 0){
-       votoris = parseInt(Math.round(1+(((data.numerodirisultati)*(4-1))/(250))));
+       votoris = parseInt(Math.round(-50+(((data.numerodirisultati)*(4+50))/(250))));
     }
-    if(data.numerodirisultati <= 5000 && data.numerodirisultati > 3000){
-       votoris = parseInt(Math.round(9+(((data.numerodirisultati-3000)*(2-9))/(5000-3000))));
+    if(data.numerodirisultati <= 15000 && data.numerodirisultati > 3000){
+       votoris = parseInt(Math.round(9+(((data.numerodirisultati-3000)*(-50-9))/(15000-3000))));
     }
     ///////
 
@@ -70,8 +70,8 @@ export const Form = () => {
        votovolumidiri = parseInt(Math.round(4+(((data.volumidiricerca-500)*(7-5))/(2000-500))));
     }
         
-    if(data.volumidiricerca < 500){
-       votovolumidiri = parseInt(Math.round(((data.volumidiricerca)*(4))/(500)));
+    if(data.volumidiricerca < 500 && data.volumidiricerca >=0){
+       votovolumidiri = parseInt(-50+(Math.round(((data.volumidiricerca)*(4+50))/(500))));
     }
     ///////
     if(data.mediabestseller < 50000){
@@ -88,10 +88,10 @@ export const Form = () => {
     }
     ///////
     if(data.numeromediodirecensioni >= 0 && data.numeromediodirecensioni <=200) {
-       votorec= parseInt(Math.round(2+(((data.numeromediodirecensioni)*(10-2))/(200))));
+       votorec= parseInt(Math.round((((data.numeromediodirecensioni)*(10))/(200))));
     }
     if(data.numeromediodirecensioni >= 200 && data.numeromediodirecensioni <=400) {
-       votorec= parseInt(Math.round(10+((data.numeromediodirecensioni-200)*(2-10))/(400-200)));
+       votorec= parseInt(Math.round(10+((data.numeromediodirecensioni-200)*(1-10))/(400-200)));
     }
     if(data.numeromediodirecensioni > 400) {
        votorec= 0;
@@ -113,14 +113,14 @@ export const Form = () => {
     if(data.numerodiautoriindipendenti >= 5 && data.numerodiautoriindipendenti <=10) {
        votonumaut= parseInt(Math.round(6+(((data.numerodiautoriindipendenti-5)*(9-6))/(10-5))));
     }
-    if(data.numerodiautoriindipendenti >= 2 && data.numerodiautoriindipendenti <5) {
+    if(data.numerodiautoriindipendenti >= 1 && data.numerodiautoriindipendenti <5) {
        votonumaut= parseInt(Math.round(1+(((data.numerodiautoriindipendenti-2)*(6-1))/(5-2))));
     }
     if(data.numerodiautoriindipendenti >10) {
        votonumaut= 10;
     }
-    if(data.numerodiautoriindipendenti <2) {
-       votonumaut= 0;
+    if(data.numerodiautoriindipendenti <1) {
+       votonumaut= -50;
     }
     ///////////
     if(data.numerodipubblicazioni >= 10 && data.numerodipubblicazioni <=15) {
@@ -140,20 +140,28 @@ export const Form = () => {
     if(data.presenzakeyword >= 10 && data.presenzakeyword <=20) {
        votok= parseInt(Math.round(5+(((data.presenzakeyword-10)*(9-5))/(20-10))));
     }
-    if(data.presenzakeyword >= 5 && data.presenzakeyword <10) {
-       votok= parseInt(Math.round(1+(((data.presenzakeyword-5)*(5-1))/(10-5))));
+    if(data.presenzakeyword > 5 && data.presenzakeyword <10) {
+       votok= parseInt(Math.round(3+(((data.presenzakeyword-5)*(5-3))/(10-5))));
     }
     if(data.presenzakeyword > 20) {
        votok= 10;
     }
-    if(data.presenzakeyword < 5) {
-       votok= 0;
+    if(data.presenzakeyword <= 5 && data.presenzakeyword >=0 ) {
+      votok= parseInt(Math.round(-50+(((data.presenzakeyword)*(5+50))/(5))));
     }
 
     /////////    
-    console.log(data)
+    console.log(votoris)
+    console.log(votovolumidiri)
+    console.log(votobestsell)
+    console.log(votorec)
+    console.log(votoprice)
+    console.log(votonumaut)
+    console.log(numerodipub)
+    console.log(votok)
     setSuccess(true)
     var total = (votoris+votovolumidiri+votobestsell+votorec+votoprice+votonumaut+numerodipub+votok)
+ 
     if(total>=0 && total <=20){
       setComment("Scappa da qui!")
     }
@@ -166,7 +174,12 @@ export const Form = () => {
     if(total>60 && total <=80){
       setComment("Ottimo risultato, da pubblicare assolutamente!")
     }
-    setResult(total)
+    if(total<0 && total >=-200){
+      setComment("Scappa da qui!")
+      console.log("Result " + total)
+      setResult(Math.round((total+200)*(10)/(200)))
+    }else{setResult(total)}
+    
   })
 
 
