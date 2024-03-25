@@ -169,7 +169,7 @@ export const Form = () => {
       setComment("Ci penserei bene prima di pubblicare qui...")
     }
     if(total>40 && total <=60){
-      setComment("Una buona keywork")
+      setComment("Una buona keyword")
     }
     if(total>60 && total <=80){
       setComment("Ottimo risultato, da pubblicare assolutamente!")
