@@ -9,6 +9,8 @@
 import { Navigation } from './components'
 import { Form } from './Form'
 import {Banner} from './components'
+import { Analytics } from '@vercel/analytics/react';
+
 
 function App() {
   return (
@@ -16,6 +18,7 @@ function App() {
       <Navigation />
       <Banner/>
       <Form />
+      <Analytics />
     </div>
   )
 }
